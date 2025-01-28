@@ -55,3 +55,94 @@ Ensure you have the following installed:
    ```bash
    git clone https://github.com/10HoneyBee01/EMS-Event-Management-System.git
    cd EMS-Event-Management-System
+2. **Set Up the Database**:
+   ## Import the database.sql file into your MySQL database:
+   ```bash
+   mysql -u root -p event_management < database.sql
+3. **Update the database credentials in database/db.php**:
+   ```bash
+   $servername = "localhost";
+   $username = "root";
+   $password = ""; // Default XAMPP password
+   $dbname = "event_management";
+5. **Run the Project Locally**:
+   ## Place the project files in the htdocs folder of XAMPP.
+   ## Start Apache and MySQL services in XAMPP.
+   ## Access the application in your browser at:
+   ```bash
+   http://localhost/EMS-Event-Management-System
+
+## 🔑 Login Credentials for Testing
+
+### Admin
+- **Email:** mahedi.hasanjoy1234@gmail.com  
+- **Password:** 1234  
+
+### User
+- **Email:** jitu@mail.com  
+- **Password:** 1234  
+
+## 🖼️ Screenshots
+
+### 1. Login Page
+![Login Page](uploads/images/login-page.png)
+
+### 2. Admin Dashboard
+![Admin Dashboard](uploads/images/admin-dashboard.png)
+
+### 3. Event Management Page
+![Event Management Page](uploads/images/event-management-page.png)
+
+### 4. Registration Page
+![Registration Page](uploads/images/registration-page.png)
+
+### 5. Download CSV Report
+![Download CSV Report](uploads/images/download-csv-report.png)
+
+## 🗂️ Project Structure
+
+```plaintext
+📁 EMS-Event-Management-System/
+├── 📁 Admin/
+│   ├── add_event.php
+│   ├── admin_dashboard.php
+│   ├── attendees.php
+│   ├── deleteUser.php
+│   ├── events.php
+│   ├── footer.php
+│   ├── header.php
+│   ├── register_attendee.php
+│   ├── sidebar.php
+│   ├── updateRole.php
+│   ├── updateuserinfo.php
+│   └── user.php
+├── 📁 User/
+│   ├── add_event.php
+│   ├── user_dashboard.php
+│   ├── attendees.php
+│   ├── events.php
+│   ├── header.php
+│   ├── register_attendee.php
+│   ├── sidebar.php
+│   ├── updateuserinfo.php
+│   └── user.php
+├── 📁 Database/
+│   └── db.php
+├── 📁 Uploads/
+│   └── images/
+├── index.php
+├── login.php
+├── logout.php
+├── register.php
+└── README.md
+
+
+## 🛠️ Usage Instructions
+
+### Admin Access:
+- Log in as an **admin** to manage events, attendees, and user roles.
+- Download attendee reports for events.
+
+### User Access:
+- Log in as a **user** to view and register for events.
+- Register attendees until the maximum capacity is reached.
