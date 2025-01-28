@@ -100,41 +100,42 @@ Ensure you have the following installed:
 ![Download CSV Report](uploads/images/download-csv-report.png)
 
 ## 🗂️ Project Structure
+   ## 🗂️ Project Structure
 
-```plaintext
-📁 EMS-Event-Management-System/
-├── 📁 Admin/
-│   ├── add_event.php
-│   ├── admin_dashboard.php
-│   ├── attendees.php
-│   ├── deleteUser.php
-│   ├── events.php
-│   ├── footer.php
-│   ├── header.php
-│   ├── register_attendee.php
-│   ├── sidebar.php
-│   ├── updateRole.php
-│   ├── updateuserinfo.php
-│   └── user.php
-├── 📁 User/
-│   ├── add_event.php
-│   ├── user_dashboard.php
-│   ├── attendees.php
-│   ├── events.php
-│   ├── header.php
-│   ├── register_attendee.php
-│   ├── sidebar.php
-│   ├── updateuserinfo.php
-│   └── user.php
-├── 📁 Database/
-│   └── db.php
-├── 📁 Uploads/
-│   └── images/
-├── index.php
-├── login.php
-├── logout.php
-├── register.php
-└── README.md
+       ```plaintext
+       📁 EMS-Event-Management-System/
+       ├── 📁 Admin/
+       │   ├── add_event.php
+       │   ├── admin_dashboard.php
+       │   ├── attendees.php
+       │   ├── deleteUser.php
+       │   ├── events.php
+       │   ├── footer.php
+       │   ├── header.php
+       │   ├── register_attendee.php
+       │   ├── sidebar.php
+       │   ├── updateRole.php
+       │   ├── updateuserinfo.php
+       │   └── user.php
+       ├── 📁 User/
+       │   ├── add_event.php
+       │   ├── user_dashboard.php
+       │   ├── attendees.php
+       │   ├── events.php
+       │   ├── header.php
+       │   ├── register_attendee.php
+       │   ├── sidebar.php
+       │   ├── updateuserinfo.php
+       │   └── user.php
+       ├── 📁 Database/
+       │   └── db.php
+       ├── 📁 Uploads/
+       │   └── images/
+       ├── index.php
+       ├── login.php
+       ├── logout.php
+       ├── register.php
+       └── README.md
 
 
 ## 🛠️ Usage Instructions
@@ -146,3 +147,26 @@ Ensure you have the following installed:
 ### User Access:
 - Log in as a **user** to view and register for events.
 - Register attendees until the maximum capacity is reached.
+
+## 📝 License
+This project is open source and available under the MIT License.
+
+## 🤝 Contribution Guidelines
+Contributions are welcome! Here’s how you can contribute:
+
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature/your-feature-name
+3. Make your changes and commit them:
+      ```bash
+   git commit -m "Add your feature"
+4. Push your changes:
+   ```bash
+   git push origin feature/your-feature-name
+
+## 📧 Contact
+For any queries or feedback, feel free to reach out:
+
+- **GitHub:** [10HoneyBee01](https://github.com/10HoneyBee01)
+- **Email:** mahedi.hasanjoy1234@gmail.com
