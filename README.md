@@ -85,19 +85,20 @@ Ensure you have the following installed:
 ## 🖼️ Screenshots
 
 ### 1. Login Page
-![Login Page](uploads/images/login-page.png)
+![Login Page](uploads/images/login.png)
 
 ### 2. Admin Dashboard
-![Admin Dashboard](uploads/images/admin-dashboard.png)
+![Admin Dashboard](uploads/images/admin_dashboard1.png)
+![Admin Dashboard](uploads/images/admin_dashboard2.png)
 
 ### 3. Event Management Page
-![Event Management Page](uploads/images/event-management-page.png)
+![Event Management Page](uploads/images/events.png)
 
 ### 4. Registration Page
-![Registration Page](uploads/images/registration-page.png)
+![Registration Page](uploads/images/register.png)
 
 ### 5. Download CSV Report
-![Download CSV Report](uploads/images/download-csv-report.png)
+![Download CSV Report](uploads/images/downloadcsv.png)
 
 ## 🗂️ Project Structure
    ## 🗂️ Project Structure
