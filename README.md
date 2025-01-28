@@ -101,7 +101,6 @@ Ensure you have the following installed:
 ![Download CSV Report](uploads/images/downloadcsv.png)
 
 ## 🗂️ Project Structure
-   ## 🗂️ Project Structure
 
        ```plaintext
        📁 EMS-Event-Management-System/
