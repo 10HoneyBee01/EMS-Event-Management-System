@@ -104,134 +104,141 @@ if ($conn->error) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* General body styling */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background: url('../uploads/images/nature.jpg') no-repeat center center fixed;
-            /* Add background image */
-            background-size: cover;
-            box-sizing: border-box;
-            color: #fff;
-            /* Set text color to white for better contrast */
-            height: 180vh;
-            /* Make sure body takes up full height */
-            position: relative;
-            /* Ensure overlay is correctly positioned */
-        }
+    /* General body styling */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        background: url('../uploads/images/nature.jpg') no-repeat center center fixed;
+        /* Add background image */
+        background-size: cover;
+        box-sizing: border-box;
+        color: #fff;
+        /* Set text color to white for better contrast */
+        height: 180vh;
+        /* Make sure body takes up full height */
+        position: relative;
+        /* Ensure overlay is correctly positioned */
+    }
 
-        /* Overlay for background */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            /* Dark overlay */
-            z-index: 1;
-            /* Place the overlay below content */
-        }
+    /* Overlay for background */
+    body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        /* Dark overlay */
+        z-index: 1;
+        /* Place the overlay below content */
+    }
 
-        /* Header styling */
-        header {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            background-color: #212529;
-            color: #fff;
-            z-index: 10;
-            padding: 10px 20px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
+    /* Header styling */
+    header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background-color: #212529;
+        color: #fff;
+        z-index: 10;
+        padding: 10px 20px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
 
-        /* Sidebar styling */
+    /* Sidebar styling */
+    .sidebar {
+        width: 230px;
+        height: 100vh;
+        position: fixed;
+        top: 50px;
+        left: 0;
+        padding-top: 20px;
+        overflow-y: auto;
+        z-index: 1000;
+        background-color: #343a40;
+    }
+
+    .sidebar a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+    }
+
+    .sidebar a:hover {
+        background-color: #ff7f50;
+        /* Coral for hover effect */
+    }
+
+    /* Main Content Styling */
+    .content {
+        margin-left: 250px;
+        padding: 30px;
+        z-index: 2;
+        /* Ensure content appears on top of overlay */
+        position: relative;
+    }
+
+    /* Text color and contrast in main content */
+    .content h1,
+    .content p {
+        color: orangered;
+        /* White text for better contrast */
+    }
+
+    .card {
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        background-color: #ffffff;
+        z-index: 2;
+        /* Ensure card is on top of overlay */
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #007bff;
+        /* Deep blue for titles */
+    }
+
+    .card-body {
+        color: #212529;
+    }
+
+    .table thead {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .table tbody tr:hover {
+        background-color: #ff7f50;
+        /* Light orange on hover for rows */
+        color: #fff;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 50px;
+        padding: 10px 20px;
+        font-size: 0.875rem;
+        color: #6c757d;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
         .sidebar {
-            width: 230px;
-            height: 100vh;
-            position: fixed;
-            top: 50px;
-            left: 0;
-            padding-top: 20px;
-            overflow-y: auto;
-            z-index: 1000;
-            background-color: #343a40;
-        }
-
-        .sidebar a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            display: block;
-        }
-
-        .sidebar a:hover {
-            background-color: #ff7f50;
-            /* Coral for hover effect */
-        }
-
-        /* Main Content Styling */
-        .content {
-            margin-left: 250px;
-            padding: 30px;
-            z-index: 2;
-            /* Ensure content appears on top of overlay */
+            width: 100%;
+            height: auto;
             position: relative;
         }
 
-        .card {
-            border-radius: 10px;
-            border: 1px solid #ddd;
-            background-color: #ffffff;
-            z-index: 2;
-            /* Ensure card is on top of overlay */
+        .content {
+            margin-left: 0;
         }
-
-        .card-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #007bff;
-            /* Deep blue for titles */
-        }
-
-        .card-body {
-            color: #212529;
-        }
-
-        .table thead {
-            background-color: #007bff;
-            color: white;
-        }
-
-        .table tbody tr:hover {
-            background-color: #ff7f50;
-            /* Light orange on hover for rows */
-            color: #fff;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 10px 20px;
-            font-size: 0.875rem;
-            color: #6c757d;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
-
-            .content {
-                margin-left: 0;
-            }
-        }
+    }
     </style>
 </head>
 
@@ -292,8 +299,8 @@ if ($conn->error) {
                             </thead>
                             <tbody>
                                 <?php if (!empty($events_by_users)): ?>
-                                    <?php foreach ($events_by_users as $index => $user): ?>
-                                        <?php
+                                <?php foreach ($events_by_users as $index => $user): ?>
+                                <?php
                                         // Fetch events dynamically for the specific user
                                         $user_id = $user['user_id'];
                                         $events_query = $conn->prepare("
@@ -309,53 +316,53 @@ if ($conn->error) {
                                         $events_query->execute();
                                         $user_events = $events_query->get_result()->fetch_all(MYSQLI_ASSOC);
                                         ?>
-                                        <tr data-bs-toggle="collapse" data-bs-target="#details-<?php echo $user['user_id']; ?>"
-                                            aria-expanded="false" aria-controls="details-<?php echo $user['user_id']; ?>">
-                                            <td><?php echo htmlspecialchars($index + 1); ?></td>
-                                            <td><?php echo htmlspecialchars($user['user_id']); ?></td>
-                                            <td><?php echo htmlspecialchars($user['user_name']); ?></td>
-                                            <td class="text-center text-primary fw-bold">
-                                                <?php echo htmlspecialchars($user['total_events']); ?>
-                                            </td>
-                                        </tr>
-                                        <!-- Dropdown Content -->
-                                        <tr class="collapse bg-light" id="details-<?php echo $user['user_id']; ?>">
-                                            <td colspan="4">
-                                                <div class="p-3">
-                                                    <h6>Events Information</h6>
-                                                    <ul class="list-group">
-                                                        <?php if (!empty($user_events)): ?>
-                                                            <?php foreach ($user_events as $event): ?>
-                                                                <li class="list-group-item">
-                                                                    <div class="d-flex justify-content-between">
-                                                                        <span><strong><?php echo htmlspecialchars($event['event_name']); ?></strong></span>
-                                                                        <span><?php echo htmlspecialchars($event['attendees']); ?> /
-                                                                            <?php echo htmlspecialchars($event['registered']); ?>
-                                                                            Attendees</span>
-                                                                    </div>
-                                                                    <!-- Progress Bar -->
-                                                                    <div class="progress mt-2" style="height: 10px;">
-                                                                        <div class="progress-bar bg-success" role="progressbar"
-                                                                            style="width: <?php echo ($event['attendees'] / $event['registered']) * 100; ?>%;"
-                                                                            aria-valuenow="<?php echo $event['attendees']; ?>"
-                                                                            aria-valuemin="0"
-                                                                            aria-valuemax="<?php echo $event['registered']; ?>">
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                            <?php endforeach; ?>
-                                                        <?php else: ?>
-                                                            <li class="list-group-item">No events found for this user.</li>
-                                                        <?php endif; ?>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; ?>
+                                <tr data-bs-toggle="collapse" data-bs-target="#details-<?php echo $user['user_id']; ?>"
+                                    aria-expanded="false" aria-controls="details-<?php echo $user['user_id']; ?>">
+                                    <td><?php echo htmlspecialchars($index + 1); ?></td>
+                                    <td><?php echo htmlspecialchars($user['user_id']); ?></td>
+                                    <td><?php echo htmlspecialchars($user['user_name']); ?></td>
+                                    <td class="text-center text-primary fw-bold">
+                                        <?php echo htmlspecialchars($user['total_events']); ?>
+                                    </td>
+                                </tr>
+                                <!-- Dropdown Content -->
+                                <tr class="collapse bg-light" id="details-<?php echo $user['user_id']; ?>">
+                                    <td colspan="4">
+                                        <div class="p-3">
+                                            <h6>Events Information</h6>
+                                            <ul class="list-group">
+                                                <?php if (!empty($user_events)): ?>
+                                                <?php foreach ($user_events as $event): ?>
+                                                <li class="list-group-item">
+                                                    <div class="d-flex justify-content-between">
+                                                        <span><strong><?php echo htmlspecialchars($event['event_name']); ?></strong></span>
+                                                        <span><?php echo htmlspecialchars($event['attendees']); ?> /
+                                                            <?php echo htmlspecialchars($event['registered']); ?>
+                                                            Attendees</span>
+                                                    </div>
+                                                    <!-- Progress Bar -->
+                                                    <div class="progress mt-2" style="height: 10px;">
+                                                        <div class="progress-bar bg-success" role="progressbar"
+                                                            style="width: <?php echo ($event['attendees'] / $event['registered']) * 100; ?>%;"
+                                                            aria-valuenow="<?php echo $event['attendees']; ?>"
+                                                            aria-valuemin="0"
+                                                            aria-valuemax="<?php echo $event['registered']; ?>">
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <?php endforeach; ?>
+                                                <?php else: ?>
+                                                <li class="list-group-item">No events found for this user.</li>
+                                                <?php endif; ?>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
                                 <?php else: ?>
-                                    <tr>
-                                        <td colspan="4" class="text-center">No events found</td>
-                                    </tr>
+                                <tr>
+                                    <td colspan="4" class="text-center">No events found</td>
+                                </tr>
                                 <?php endif; ?>
                             </tbody>
 
@@ -404,27 +411,27 @@ if ($conn->error) {
 
     <!-- Scripts -->
     <script>
-        // Display current time
-        function updateTime() {
-            const currentTime = new Date();
-            document.getElementById('currentTime').innerText = currentTime.toLocaleTimeString();
-        }
-        setInterval(updateTime, 1000);
+    // Display current time
+    function updateTime() {
+        const currentTime = new Date();
+        document.getElementById('currentTime').innerText = currentTime.toLocaleTimeString();
+    }
+    setInterval(updateTime, 1000);
 
-        // Calculate and display time spent
-        const loginTime = <?php echo json_encode($_SESSION['login_time']); ?> * 1000;
+    // Calculate and display time spent
+    const loginTime = <?php echo json_encode($_SESSION['login_time']); ?> * 1000;
 
-        function updateTimeSpent() {
-            const now = new Date().getTime();
-            const timeSpent = Math.floor((now - loginTime) / 1000);
-            const hours = Math.floor(timeSpent / 3600);
-            const minutes = Math.floor((timeSpent % 3600) / 60);
-            const seconds = timeSpent % 60;
+    function updateTimeSpent() {
+        const now = new Date().getTime();
+        const timeSpent = Math.floor((now - loginTime) / 1000);
+        const hours = Math.floor(timeSpent / 3600);
+        const minutes = Math.floor((timeSpent % 3600) / 60);
+        const seconds = timeSpent % 60;
 
-            document.getElementById('timeSpent').innerText =
-                `${hours}h ${minutes}m ${seconds}s`;
-        }
-        setInterval(updateTimeSpent, 1000);
+        document.getElementById('timeSpent').innerText =
+            `${hours}h ${minutes}m ${seconds}s`;
+    }
+    setInterval(updateTimeSpent, 1000);
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
