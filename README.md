@@ -75,7 +75,7 @@ Ensure you have the following installed:
 ## 🔑 Login Credentials for Testing
 
 ### Admin
-- **Email:** mahedi.hasanjoy1234@gmail.com  
+- **Email:** testing@mail.com  
 - **Password:** 1234  
 
 ### User
